@@ -1,0 +1,41 @@
+.grid-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid-backdrop__dots {
+  position: absolute;
+  inset: -20%;
+  background-image: radial-gradient(rgba(2, 48, 71, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  animation: driftGrid 26s linear infinite;
+}
+
+.grid-backdrop__glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(33, 158, 188, 0.18), transparent 70%);
+  filter: blur(10px);
+}
+
+@keyframes driftGrid {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(28px, 28px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-backdrop__dots {
+    animation: none;
+  }
+}

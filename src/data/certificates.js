@@ -1,0 +1,98 @@
+export const certificates = [
+  {
+    id: "bcg-strategy-consulting",
+    organization: "Boston Consulting Group (BCG)",
+    shortOrg: "BCG",
+    title: "Introduction to Strategy Consulting Job Simulation",
+    issuer: "Forage",
+    date: "Avril 2026",
+    completionDate: "30 Avril 2026",
+    verificationCode: "tQ7JwtDvBjc63grrR",
+    userVerificationCode: "69e21362b14c49429940a7d8",
+    pdfPath: "/certificates/bcg-certificate.pdf",
+    overviewImage: "/certificates/bcg-overview.png",
+    category: "Conseil en Stratégie",
+    badgeLabel: "Certifié BCG",
+    themeColor: "#0D9488",
+    accentColor: "#006C42",
+    summary:
+      "Simulation professionnelle conçue par le Boston Consulting Group (BCG) axée sur la résolution de problèmes stratégiques d'entreprise, la déconstruction des hypothèses d'affaires et la conception de stratégies de croissance.",
+    highlights: [
+      "Méthode BCG d'idéation et de résolution de problèmes complexes",
+      "Déconstruction des modèles mentaux existants (Paradigm-Busting)",
+      "Stratégie de croissance du chiffre d'affaires pour une entreprise cliente",
+    ],
+    tasks: [
+      {
+        id: "task-1",
+        number: "Tâche 1",
+        title: "Challenge your Mental Models",
+        duration: "30–60 min",
+        level: "Introductif",
+        description:
+          "Reconnaître et remettre en question les postulats implicites guidant la prise de décision économique pour débloquer de nouveaux angles d'innovation.",
+        takeaway: "Approche créative de consultant BCG et exercice pratique de Paradigm-Busting.",
+        image: "/certificates/bcg-tache1.png",
+      },
+      {
+        id: "task-2",
+        number: "Tâche 2",
+        title: "Building New Boxes",
+        duration: "30–60 min",
+        level: "Introductif",
+        description:
+          "Reformuler les questions stratégiques et créer un nouveau cadre de référence ('boxes') pour stimuler la croissance du chiffre d'affaires d'une entreprise.",
+        takeaway: "Application concrète du framework BCG pour générer des leviers de revenus mesurables.",
+        image: "/certificates/bcg-tache2.png",
+      },
+    ],
+  },
+  {
+    id: "goldman-sachs-operations",
+    organization: "Goldman Sachs",
+    shortOrg: "Goldman Sachs",
+    title: "Operations Job Simulation",
+    issuer: "Forage",
+    date: "Avril 2026",
+    completionDate: "30 Avril 2026",
+    verificationCode: "FjkwDds3Fqf7RmegZ",
+    userVerificationCode: "69e21362b14c49429940a7d8",
+    pdfPath: "/certificates/goldman-sachs-certificate.pdf",
+    overviewImage: "/certificates/gs-overview.png",
+    category: "Finance de Marché & Opérations",
+    badgeLabel: "Certifié Goldman Sachs",
+    themeColor: "#1D4ED8",
+    accentColor: "#1D4ED8",
+    summary:
+      "Simulation pratique du rôle d'Operations Analyst chez Goldman Sachs : contrôle et réconciliation des flux de capitaux, analyse de données de règlement et pilotage du risque opérationnel.",
+    highlights: [
+      "Traitement d'opérations financières pour clients à très haute valeur nette (UHNW)",
+      "Détection et résolution des litiges de settlement / transfert d'actifs",
+      "Coordination interdépartementale avec Trading, Compliance et Systèmes d'information",
+    ],
+    tasks: [
+      {
+        id: "task-1",
+        number: "Tâche 1",
+        title: "Foundations of Operations",
+        duration: "30–60 min",
+        level: "Introductif",
+        description:
+          "Assimilation des architectures opérationnelles d'une banque d'investissement mondiale et sécurisation des circuits de traitement post-marché.",
+        takeaway: "Maîtrise du cycle de vie des opérations et des contrôles de premier niveau.",
+        image: "/certificates/gs-tache1.png",
+      },
+      {
+        id: "task-2",
+        number: "Tâche 2",
+        title: "Facilitating Ultra-High Net Worth Transactions",
+        duration: "45–60 min",
+        level: "Opérationnel",
+        description:
+          "Analyse de flux de données transactionnelles, identification des goulots de règlement et application des normes de conformité et de mitigation du risque opérationnel.",
+        takeaway: "Résolution collaborative Trading / Compliance / IT sous contrainte de temps.",
+        image: "/certificates/gs-tache2.png",
+      },
+    ],
+  },
+];

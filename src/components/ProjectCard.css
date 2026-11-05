@@ -1,0 +1,112 @@
+/* ============================================================
+   PROJECT CARD COMPONENT — Analytique Sobre
+   ============================================================ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s4);
+  box-shadow: var(--shadow-xs);
+  text-decoration: none;
+  color: var(--text);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card:hover::before {
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--s2);
+}
+
+.project-card__head .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+}
+
+.project-card__arrow {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.project-card:hover .project-card__arrow {
+  transform: translate(3px, -3px);
+  color: var(--accent);
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 6px 0;
+  color: var(--text);
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-card__title {
+  color: var(--accent);
+}
+
+.project-card__subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 var(--s3) 0;
+  flex: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--s3);
+}
+
+.project-card__tags .tag {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  padding: 3px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.project-card__level {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--amber);
+  margin-top: auto;
+  display: inline-block;
+}

@@ -1,0 +1,78 @@
+/* ============================================================
+   PROJECTS PAGE STYLES — Analytique Sobre
+   ============================================================ */
+.projects-page {
+  padding-top: var(--s6);
+  padding-bottom: var(--s8);
+  min-height: calc(100vh - 180px);
+}
+
+.projects-page__header {
+  margin-bottom: var(--s5);
+  max-width: 800px;
+}
+
+.projects-page__title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-top: var(--s2);
+  margin-bottom: var(--s3);
+  letter-spacing: -0.02em;
+}
+
+/* Filter Bar */
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  flex-wrap: wrap;
+  margin-bottom: var(--s5);
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  background: rgba(26, 35, 50, 0.05);
+}
+
+.filter-btn--active {
+  background: var(--white);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(26, 35, 50, 0.08);
+}
+
+.filter-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(29, 78, 216, 0.1);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Grid */
+.projects-page__grid {
+  margin-top: var(--s4);
+}
