@@ -1,4 +1,4 @@
-﻿/* Certifications page */
+/* Certifications page */
 .certifications-page__title {
   margin: var(--s2) 0 var(--s3);
 }
@@ -14,6 +14,9 @@
   .certifications-page__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .cert-card--featured {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ---- Cert card ---- */
@@ -28,10 +31,18 @@
   gap: var(--s4);
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
 }
 .cert-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+.cert-card--featured {
+  background: linear-gradient(180deg, rgba(30, 64, 175, 0.025) 0%, var(--white) 120px);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  border-top: 5px solid var(--cert-color, var(--accent));
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
 }
 
 .cert-card__header {
@@ -45,12 +56,18 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(var(--teal-rgb),.1);
+  background: rgba(var(--teal-rgb), .08);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cert-color, var(--teal));
-  border: 1px solid rgba(var(--teal-rgb),.2);
+  border: 1px solid rgba(var(--teal-rgb), .18);
+}
+
+.cert-card--featured .cert-card__badge {
+  background: rgba(30, 64, 175, 0.08);
+  border-color: rgba(30, 64, 175, 0.25);
+  color: var(--accent);
 }
 
 .cert-card__meta {
@@ -58,6 +75,29 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+
+.cert-card__meta-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cert-card__featured-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(30, 64, 175, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  padding: 2px 8px;
+  border-radius: 999px;
 }
 
 .cert-card__org {
@@ -80,7 +120,7 @@
 }
 
 .cert-card__title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--text);
   margin: 0;
 }
@@ -132,6 +172,18 @@
   text-transform: uppercase;
   color: var(--text-muted);
   margin: 0 0 4px;
+}
+
+.cert-card__tasks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .cert-card--featured .cert-card__tasks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Task accordion */
@@ -244,6 +296,14 @@
   font-size: 0.88rem;
   padding: 10px 20px;
   min-height: 40px;
+}
+.cert-card__verify-btn {
+  font-size: 0.88rem;
+  padding: 10px 18px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .cert-card__code {
   display: flex;

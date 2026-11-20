@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+#fichier de skill et ajout_certif
+
+.agents/
+Ajout_certif/
+skills_a_utilise/

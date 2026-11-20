@@ -22,6 +22,13 @@ const education = [
 
 const certifications = [
   {
+    period: "Novembre 2026",
+    title: "Fonds Monétaire International (FMI / IMFx) — Financial Market Analysis (FMAx)",
+    detail: "Certification vérifiée edX · Institut pour le renforcement des capacités du FMI · ID : e94d80517bee4ebda3a0adfbeaa306c7",
+    color: "var(--accent)",
+    featured: true,
+  },
+  {
     period: "Avril 2026",
     title: "BCG, Introduction to Strategy Consulting",
     detail: "Simulation professionnelle via Forage · Code de vérification : tQ7JwtDvBjc63grrR",
@@ -74,7 +81,7 @@ export default function CV() {
         <div className="cv-page__main">
           {/* Formation */}
           <ScrollReveal>
-            <span className="laysimp">Formation</span>
+            <span className="eyebrow">Formation</span>
             <h2 className="section__title">Parcours académique</h2>
           </ScrollReveal>
           <div className="cv-timeline">
@@ -89,7 +96,7 @@ export default function CV() {
 
           {/* Expérience */}
           <ScrollReveal delay={0.1}>
-            <span className="laysimp">Expérience</span>
+            <span className="eyebrow">Expérience</span>
             <h2 className="section__title">Expérience professionnelle</h2>
           </ScrollReveal>
           <div className="cv-timeline">
@@ -104,13 +111,16 @@ export default function CV() {
 
           {/* Certifications */}
           <ScrollReveal delay={0.15}>
-            <span className="laysimp">Certifications</span>
-            <h2 className="section__title">Simulations professionnelles</h2>
+            <span className="eyebrow">Certifications</span>
+            <h2 className="section__title">Certifications & Formations</h2>
           </ScrollReveal>
           <div className="cv-timeline">
             {certifications.map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 0.08} className="cv-timeline__item cv-timeline__item--cert" style={{ "--cert-accent": c.color }}>
-                <span className="cv-timeline__period" style={{ color: c.color }}>{c.period}</span>
+                <span className="cv-timeline__period" style={{ color: c.color }}>
+                  {c.period}
+                  {c.featured && <span className="cv-cert-tag">À la une</span>}
+                </span>
                 <h3>{c.title}</h3>
                 <p>{c.detail}</p>
               </ScrollReveal>

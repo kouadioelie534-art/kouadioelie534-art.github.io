@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="footer__role">ISE: Ingénieur Statisticien Économiste</p>
         </div>
         <div className="footer__links">
-          <a href="kouadioelie534@gmail.com" aria-label="Email">
+          <a href="mailto:kouadioelie534@gmail.com" aria-label="Email">
             <Mail size={20} />
           </a>
           <a href="https://www.linkedin.com/in/samuel-elie-poyard-62b820334/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BjbvrHpgLQuyTLXyo4ofpEg%3D%3D" target="_blank" rel="noreferrer" aria-label="LinkedIn">

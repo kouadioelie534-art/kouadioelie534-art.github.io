@@ -234,3 +234,18 @@
 .cv-timeline__item--cert::before {
   background: var(--cert-accent, var(--teal));
 }
+
+.cv-cert-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(30, 64, 175, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}

@@ -1,43 +1,61 @@
 /* ============================================================
-   DESIGN SYSTEM — Palette "Analytique Sobre"
+   DESIGN SYSTEM — Palette Sobre, Moderne & Institutionnelle
+   Profil : Ingénieur Statisticien Économiste (Data, Économétrie & Finance)
    ============================================================ */
 :root {
-  /* --- Couleurs --- */
-  --bg: #caf0f8;
-  --bg-card: #caf0f8;
-  --text: #1A2332;
-  --text-muted: #5C6470;
-  --accent: #1D4ED8;
-  --accent-rgb: 29, 78, 216;
-  --teal: #0D9488;
-  --teal-rgb: 13, 148, 136;
-  --amber: #D97706;
-  --amber-rgb: 217, 119, 6;
-  --white: #bbe0e8;
-  --border: #90e0ef;
-  --border-strong: #edede9;
+  /* --- Couleurs de fond & surfaces --- */
+  --bg: #F8FAFC;            /* Slate 50 : fond doux, lumineux, reposant */
+  --bg-card: #F1F5F9;       /* Slate 100 : surfaces d'accentuation légères */
+  --bg-subtle: #EDF2F7;     /* Slate 150 : fonds secondaires */
+  --white: #FFFFFF;         /* Blanc pur pour contraste franc des cartes */
+  --text: #0F172A;          /* Slate 900 : texte principal haute lisibilité */
+  --text-muted: #475569;    /* Slate 600 : texte secondaire équilibré */
+  --text-subtle: #64748B;   /* Slate 500 : métadonnées et labels discrets */
 
-  /* Legacy compat */
+  /* --- Accents institutionnels sobres (Finance & Ingénierie) --- */
+  --accent: #1E3A8A;        /* Navy institutionnel profond (Blue 900) */
+  --accent-rgb: 30, 58, 138;
+  --accent-hover: #1D4ED8;  /* Blue 700 au survol */
+  --accent-light: #EFF6FF;  /* Blue 50 */
+  --accent-border: #BFDBFE; /* Blue 200 */
+
+  --teal: #0F766E;          /* Émeraude sombre / Teal 700 */
+  --teal-rgb: 15, 118, 110;
+  --teal-hover: #115E59;    /* Teal 800 */
+  --teal-light: #F0FDFA;    /* Teal 50 */
+  --teal-border: #99F6E4;   /* Teal 200 */
+
+  --amber: #B45309;         /* Ambre institutionnel (Amber 700) */
+  --amber-rgb: 180, 83, 9;
+  --amber-light: #FFFBEB;
+  --amber-border: #FDE68A;
+
+  /* --- Bordures & Lignes architecturales --- */
+  --border: #E2E8F0;        /* Slate 200 : fine, précise */
+  --border-strong: #CBD5E1; /* Slate 300 : délimitation nette */
+  --border-subtle: #F1F5F9; /* Slate 100 */
+
+  /* --- Compatibilité & Aliases --- */
   --color-navy-900: var(--text);
-  --color-navy-900-rgb: 26, 35, 50;
+  --color-navy-900-rgb: 15, 23, 42;
   --color-teal-600: var(--teal);
   --color-teal-600-rgb: var(--teal-rgb);
-  --color-sky-200: #B2EBF6;
-  --color-sky-200-rgb: 178, 235, 246;
-  --color-amber-400: #FBBF24;
-  --color-amber-400-rgb: 251, 191, 36;
+  --color-sky-200: #94A3B8;
+  --color-sky-200-rgb: 148, 163, 184;
+  --color-amber-400: #D97706;
+  --color-amber-400-rgb: 217, 119, 6;
   --color-orange-500: var(--amber);
   --color-orange-500-rgb: var(--amber-rgb);
   --color-paper: var(--bg);
-  --color-paper-rgb: 250, 250, 248;
+  --color-paper-rgb: 248, 250, 252;
   --color-ink-60: var(--text-muted);
   --color-border: var(--border);
   --color-white: var(--white);
 
   /* --- Typographie --- */
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", "IBM Plex Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 
   /* --- Espacements --- */
   --space-1: 4px;
@@ -57,29 +75,29 @@
   --space-8: 96px;
   --s8: 96px;
 
-  /* --- Tokens --- */
-  --container-max: 1200px;
+  /* --- Rayons et Élévations sobres (finis les néons et ombres exagérées) --- */
+  --container-max: 1180px;
+  --radius-xs: 4px;
   --radius-sm: 6px;
-  --radius: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
 
-  --shadow-soft: 0 4px 16px rgba(26, 35, 50, .08);
-  --shadow-xs: 0 1px 3px rgba(26, 35, 50, .06);
-  --shadow-sm: 0 4px 12px rgba(26, 35, 50, .08);
-  --shadow-md: 0 8px 24px rgba(26, 35, 50, .12);
-  --shadow-lg: 0 20px 48px rgba(26, 35, 50, .14);
-  --shadow-accent: 0 8px 32px rgba(29, 78, 216, .25);
-  --shadow-teal: 0 8px 32px rgba(13, 148, 136, .25);
+  /* Ombres naturelles et précises */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+  --shadow-card-hover: 0 8px 24px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 400ms cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-base: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ============================================================
-   RESET & BASE
+   RESET & FONDAMENTAUX
    ============================================================ */
 *,
 *::before,
@@ -95,7 +113,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.65;
   background: var(--bg);
   color: var(--text);
@@ -120,39 +138,53 @@ button {
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-hover);
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: var(--radius-sm);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
 }
 
+/* ============================================================
+   TYPOGRAPHIE
+   ============================================================ */
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.22;
   margin: 0;
   color: var(--text);
+  letter-spacing: -0.025em;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 4vw + 1rem, 3.6rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(2.1rem, 3.8vw + 0.5rem, 3.25rem);
+  letter-spacing: -0.035em;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(1.45rem, 2.2vw + 0.4rem, 1.95rem);
+  letter-spacing: -0.025em;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p {
@@ -160,7 +192,7 @@ p {
 }
 
 /* ============================================================
-   LAYOUT
+   STRUCTURE & CONTENEUR
    ============================================================ */
 .container {
   max-width: var(--container-max);
@@ -182,198 +214,23 @@ p {
   padding: var(--s6) 0;
 }
 
-/* ============================================================
-   BOUTONS
-   ============================================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s2);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 13px 26px;
-  border-radius: var(--radius);
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  transition: transform var(--transition-base),
-    background-color var(--transition-base),
-    box-shadow var(--transition-base),
-    border-color var(--transition-base);
-  min-height: 48px;
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-}
-
-.btn:active {
-  transform: translateY(1px) scale(0.99);
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: var(--white);
-  box-shadow: var(--shadow-accent);
-}
-
-.btn-primary:hover {
-  background: #1741B6;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(29, 78, 216, .32);
-  color: var(--white);
-}
-
-.btn-accent {
-  background: var(--teal);
-  color: var(--white);
-  box-shadow: var(--shadow-teal);
-}
-
-.btn-accent:hover {
-  background: #0B7A71;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(13, 148, 136, .32);
-  color: var(--white);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border-strong);
-}
-
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   CARDS
-   ============================================================ */
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--s4);
-  position: relative;
-  overflow: hidden;
-  transition: border-color var(--transition-base),
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(var(--teal-rgb), .1), transparent 65%);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  pointer-events: none;
-}
-
-.card:hover {
-  border-color: rgba(var(--teal-rgb), .4);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* ============================================================
-   TAGS / BADGES
-   ============================================================ */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(var(--teal-rgb), .1);
-  color: var(--teal);
-  border: 1px solid rgba(var(--teal-rgb), .2);
-  transition: background var(--transition-fast);
-}
-
-.tag--accent {
-  background: rgba(var(--accent-rgb), .1);
-  color: var(--accent);
-  border-color: rgba(var(--accent-rgb), .2);
-}
-
-.tag--amber {
-  background: rgba(var(--amber-rgb), .1);
-  color: var(--amber);
-  border-color: rgba(var(--amber-rgb), .2);
-}
-
-/* ============================================================
-   EYEBROW
-   ============================================================ */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-
-.laysimp {
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgb(208, 129, 65);
-}
-
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 2px;
-  background: var(--teal);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* ============================================================
-   SECTION HELPERS
-   ============================================================ */
 .section__title {
-  margin: var(--s2) 0 var(--s4);
+  margin: var(--s2) 0 var(--s3);
+  color: var(--text);
 }
 
 .section__lead {
   font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 62ch;
+  max-width: 60ch;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .section__cta {
   margin-top: var(--s5);
 }
 
-/* ============================================================
-   RULE
-   ============================================================ */
 .rule {
   height: 1px;
   background: var(--border);
@@ -382,7 +239,182 @@ p {
 }
 
 /* ============================================================
-   GRID
+   BOUTONS ÉPURÉS & TACTILES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 42px;
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(30, 58, 138, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(30, 58, 138, 0.3);
+}
+
+.btn-accent {
+  background: var(--teal);
+  color: #FFFFFF;
+  border-color: var(--teal);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 118, 110, 0.2);
+}
+
+.btn-accent:hover {
+  background: var(--teal-hover);
+  border-color: var(--teal-hover);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(15, 118, 110, 0.3);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--text);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-outline:hover {
+  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg-card);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--text);
+}
+
+/* ============================================================
+   CARTES SOBRES (Sans faux halo IA ni gradient artificiel)
+   ============================================================ */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s4);
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ============================================================
+   TAGS & BADGES TAXONOMIQUES
+   ============================================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.tag--accent {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.tag--teal {
+  background: var(--teal-light);
+  color: var(--teal);
+  border-color: var(--teal-border);
+}
+
+.tag--amber {
+  background: var(--amber-light);
+  color: var(--amber);
+  border-color: var(--amber-border);
+}
+
+/* ============================================================
+   KICKER / EYEBROW INSTITUTIONNEL
+   Remplace le laysimp générique IA par un repère typographique précis
+   ============================================================ */
+.eyebrow,
+.laysimp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--s2);
+}
+
+.eyebrow-teal {
+  color: var(--teal);
+  background: var(--teal-light);
+  border-color: var(--teal-border);
+}
+
+/* Status dot pulsation subtile */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   GRILLES DE PRÉSENTATION
    ============================================================ */
 .grid-3 {
   display: grid;
@@ -403,207 +435,12 @@ p {
 }
 
 /* ============================================================
-   REDUCED MOTION
+   RÉDUCTION DES ANIMATIONS (ACCESSIBILITÉ)
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  background: var(--color-paper);
-  color: var(--color-navy-900);
-  -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
-  margin: 0;
-  color: var(--color-navy-900);
-}
-
-h1 {
-  font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
-}
-
-h2 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 1.75rem);
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-p {
-  margin: 0 0 1rem 0;
-  max-width: 68ch;
-}
-
-a {
-  color: var(--color-teal-600);
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button {
-  font-family: inherit;
-}
-
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-4);
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--space-3);
-  }
-}
-
-/* ---------- Boutons ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px 22px;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
-  min-height: 44px;
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--color-teal-600);
-  outline-offset: 2px;
-}
-
-.btn-primary {
-  background: var(--color-navy-900);
-  color: var(--color-white);
-}
-
-.btn-primary:hover {
-  background: var(--color-teal-600);
-  transform: translateY(-2px);
-}
-
-.btn-accent {
-  background: var(--color-orange-500);
-  color: var(--color-white);
-}
-
-.btn-accent:hover {
-  background: #e07600;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--color-navy-900);
-  border-color: var(--color-border);
-}
-
-.btn-outline:hover {
-  border-color: var(--color-teal-600);
-  color: var(--color-teal-600);
-}
-
-/* ---------- Tags ---------- */
-.tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(var(--color-sky-200-rgb), 0.35);
-  color: var(--color-navy-900);
-}
-
-/* ---------- Eyebrow / code label ---------- */
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--color-orange-500);
-  letter-spacing: 0.02em;
-}
-
-/* ---------- Cartes ---------- */
-.card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(var(--color-teal-600-rgb), 0.12),
-      transparent 70%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-
-.card:hover {
-  border-color: var(--color-teal-600);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* ---------- Ligne / séparateur ---------- */
-.rule {
-  height: 1px;
-  background: var(--color-border);
-  border: none;
-  margin: var(--space-6) 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

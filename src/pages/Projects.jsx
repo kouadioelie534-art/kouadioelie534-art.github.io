@@ -27,12 +27,12 @@ export default function Projects() {
       <div className="container">
         <ScrollReveal>
           <div className="projects-page__header">
-            <span className="laysimp">Catalogue de Réalisations</span>
+            <span className="eyebrow">Catalogue de Réalisations</span>
             <h1 className="projects-page__title">Projets & Travaux de Recherche</h1>
             <p className="section__lead">
-              Neuf projets menés à bien durant le cycle Ingénieurs Statisticiens Économistes à
-              l'ENSEA et en immersion professionnelle à la DGPE, mêlant rigueur économétrique,
-              modélisation statistique et developpement logicielle.
+              Neuf projets menés à bien durant le cycle Ingénieur Statisticien Économiste à
+              l'ENSEA et en immersion professionnelle à la DGPE, alliant rigueur économétrique,
+              modélisation statistique et développement logiciel.
             </p>
           </div>
         </ScrollReveal>

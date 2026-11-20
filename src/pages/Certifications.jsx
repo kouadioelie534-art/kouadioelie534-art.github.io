@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, ChevronDown, Download, ExternalLink, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
@@ -47,7 +47,7 @@ function CertCard({ cert, index }) {
 
   return (
     <motion.article
-      className="cert-card"
+      className={`cert-card ${cert.featured ? "cert-card--featured" : ""}`}
       style={{ "--cert-color": cert.themeColor }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -55,9 +55,18 @@ function CertCard({ cert, index }) {
       transition={{ duration: 0.55, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="cert-card__header">
-        <div className="cert-card__badge"><Award size={22} /></div>
+        <div className="cert-card__badge">
+          <Award size={22} />
+        </div>
         <div className="cert-card__meta">
-          <span className="cert-card__org">{cert.organization}</span>
+          <div className="cert-card__meta-top">
+            <span className="cert-card__org">{cert.organization}</span>
+            {cert.featured && (
+              <span className="cert-card__featured-pill">
+                À la une
+              </span>
+            )}
+          </div>
           <span className="cert-card__via">via {cert.issuer}</span>
         </div>
         <span className="cert-card__date">{cert.completionDate}</span>
@@ -78,16 +87,30 @@ function CertCard({ cert, index }) {
       </ul>
 
       <div className="cert-card__tasks">
-        <p className="cert-card__tasks-label">Taches completees</p>
-        {cert.tasks.map((task) => (
-          <TaskCard key={task.id} task={task} isOpen={openTask === task.id} onToggle={() => toggle(task.id)} />
-        ))}
+        <p className="cert-card__tasks-label">
+          {cert.tasks.length > 2 ? `Modules validés (${cert.tasks.length})` : "Tâches complétées"}
+        </p>
+        <div className={cert.tasks.length > 2 ? "cert-card__tasks-grid" : ""}>
+          {cert.tasks.map((task) => (
+            <TaskCard key={task.id} task={task} isOpen={openTask === task.id} onToggle={() => toggle(task.id)} />
+          ))}
+        </div>
       </div>
 
       <div className="cert-card__actions">
         <a href={cert.pdfPath} download className="btn btn-primary cert-card__dl">
           <Download size={16} /> Certificat PDF
         </a>
+        {cert.verifyUrl && (
+          <a
+            href={cert.verifyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline cert-card__verify-btn"
+          >
+            <ExternalLink size={14} /> Vérifier en ligne
+          </a>
+        )}
         <span className="cert-card__code">
           <ExternalLink size={13} /> Code : {cert.verificationCode}
         </span>
@@ -101,11 +124,10 @@ export default function Certifications() {
     <section className="section certifications-page">
       <div className="container">
         <ScrollReveal>
-          <span className="laysimp">Parcours professionnel</span>
-          <h1 className="certifications-page__title">Certifications</h1>
+          <span className="eyebrow">Parcours & Distinctions</span>
+          <h1 className="certifications-page__title">Certifications & Formations Internationales</h1>
           <p className="section__lead">
-            Simulations de poste validees par des entreprises de renommee mondiale via la
-            plateforme Forage.
+            Accréditations et simulations de haut niveau validées auprès d'institutions internationales et de firmes de référence (Fonds Monétaire International, BCG, Goldman Sachs).
           </p>
         </ScrollReveal>
         <div className="certifications-page__grid">

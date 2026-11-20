@@ -31,7 +31,7 @@ export default function ProjectDetail() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <span className="laysimp">{project.code}</span>
+          <span className="eyebrow">{project.code}</span>
           <h1 className="project-detail__title">{project.title}</h1>
           <p className="project-detail__subtitle">{project.subtitle}</p>
           <div className="project-detail__meta">
@@ -74,7 +74,7 @@ export default function ProjectDetail() {
         <hr className="rule" />
 
         <ScrollReveal className="project-detail__next">
-          <span className="laysimp">Projet suivant</span>
+          <span className="eyebrow">Projet suivant</span>
           <Link to={`/projets/${next.slug}`} className="project-detail__next-link">
             {next.title} <ArrowRight size={18} />
           </Link>

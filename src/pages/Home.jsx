@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Award, BarChart3, Code2, ClipboardList, ToolboxIcon, CoinsIcon } from "lucide-react";
+import { ArrowRight, Download, Award, BarChart3, Code2, CoinsIcon, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import RevealText from "../components/RevealText";
 import ScrollReveal from "../components/ScrollReveal";
@@ -13,37 +13,55 @@ const featured = projects.filter((p) =>
 );
 
 const stats = [
-  { value: "09", label: "Projets réalisés", color: "var(--accent)" },
-  { value: "02", label: "Domaines data & dev", color: "var(--teal)" },
-  { value: "2ème", label: "Année ISE · ENSEA", color: "var(--amber)" },
+  { value: "09", label: "Projets & Travaux réalisés", color: "var(--accent)" },
+  { value: "03", label: "Data, Économétrie & Finance", color: "var(--teal)" },
+  { value: "3ᵉ", label: "Année ISE · ENSEA Abidjan", color: "var(--text)" },
 ];
 
 const skillGroups = [
   {
     title: "Data & Économétrie",
     icon: BarChart3,
-    items: ["MachineLearning", "ACP/ACM/AFC", "Économétrie des variables qualitatives", "Économétrie des séries temporelles"],
+    items: ["Machine Learning", "ACP / ACM / AFC", "Variables qualitatives", "Séries temporelles", "Modélisation VAR / VECM"],
   },
   {
-    title: "Développement",
+    title: "Ingénierie & Outils",
     icon: Code2,
-    items: ["React", "Flask", "PostgreSQL", "SQLite", "Electron", "Intégration API"],
+    items: ["Python", "SQL", "Flask", "React", "PostgreSQL", "SQLite", "Electron", "Git"],
   },
   {
-    title: "Modélisation économique",
+    title: "Modélisation Économique & Risque",
     icon: CoinsIcon,
-    items: ["Microéconomie", "Théorie des jeux", "Concurrence imparfaite", "Comptabilité nationale", "Comptabilité d'entreprise"],
+    items: ["Microéconomie", "Théorie des jeux", "Gestion de portefeuille", "Value at Risk (VaR)", "Comptabilité nationale"],
   },
   {
-    title: "Programmation & outils",
-    icon: ToolboxIcon,
-    items: ["Python", "R", "Eviews", "Stata", "SQL", "LaTeX", "Excel", "Word", "PowerPoint"],
+    title: "Environnements d'Analyse",
+    icon: Wrench,
+    items: ["R", "Stata", "EViews", "LaTeX", "Excel avancé / VBA", "Power BI"],
   },
 ];
 
 const certifHighlights = [
-  { org: "BCG", title: "Introduction to Strategy Consulting", color: "var(--teal)" },
-  { org: "Goldman Sachs", title: "Operations Job Simulation", color: "var(--accent)" },
+  {
+    org: "FMI / IMFx",
+    title: "Financial Market Analysis (FMAx)",
+    color: "var(--accent)",
+    featured: true,
+    tag: "Référence",
+    desc: "Évaluation d'actifs, courbe des taux, gestion de portefeuille & modélisation du risque (VaR)",
+  },
+  {
+    org: "BCG",
+    title: "Introduction to Strategy Consulting",
+    color: "var(--teal)",
+    desc: "Résolution de problèmes complexes et stratégie de croissance",
+  },
+  {
+    org: "Goldman Sachs",
+    title: "Operations Job Simulation",
+    color: "var(--accent)",
+    desc: "Contrôle des flux financiers, transactions UHNW et risque opérationnel",
+  },
 ];
 
 export default function Home() {
@@ -56,11 +74,15 @@ export default function Home() {
           {/* Text column */}
           <div className="hero__text">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="hero__status-wrap"
             >
-              <span className="hero__floating-value">ISE</span> Ingénieur Statisticien Économiste · ENSEA
+              <div className="hero__status-badge">
+                <span className="status-dot" />
+                <span>Élève-Ingénieur Statisticien Économiste · ENSEA Abidjan</span>
+              </div>
             </motion.div>
 
             <RevealText
@@ -69,34 +91,39 @@ export default function Home() {
               text="Kouadio Poyard Samuel-Elie"
             />
 
-            <ScrollReveal delay={0.3}>
+            <ScrollReveal delay={0.25}>
               <p className="hero__lead">
-                Je suis étudiant en ISE à l'ENSEA.J'ai des compétences à la fois orientées data, économétrie,
-                économie et développement logiciel (Python, SQL, Flask, React). Auteur/co-auteur de plusieurs
-                projets menés jusqu'au produit livrable, y compris en stage au sein
-                d'une administration publique.Je cultive rigeur et curiosité dans le travail.
+                Élève-Ingénieur Statisticien Économiste (ISE) à l'ENSEA d'Abidjan, je combine
+                modélisation économétrique, analyse rigoureuse de données et développement logiciel
+                appliqué (Python, SQL, React, Flask). Auteur de plateformes et d'études menées
+                jusqu'au produit livrable, notamment en immersion au sein de la Direction Générale du Portefeuille de l'État (DGPE).
               </p>
               <p className="hero__lead">
-                Passionné de finance ,je m'intéresse particulièrement à la modélisation de risque et à la gestion de portefeuille.
-                Je compte allié mes compétences actuelles à cette passion à travers la suite de ma formation mais aussi d'éventuels projets.
+                Passionné par la finance quantitative, la modélisation des risques et l'aide à la décision stratégique,
+                je m'attache à concevoir des solutions robustes, scientifiquement fondées et directement exploitables.
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.42} className="hero__actions">
+            <ScrollReveal delay={0.38} className="hero__actions">
               <Link to="/projets" className="btn btn-primary">
-                Voir mes projets <ArrowRight size={18} />
+                Consulter mes projets <ArrowRight size={18} />
               </Link>
               <Link to="/cv" className="btn btn-accent">
                 Télécharger le CV <Download size={18} />
               </Link>
             </ScrollReveal>
 
-            {/* Social proof row */}
-            <ScrollReveal delay={0.54} className="hero__badges">
+            {/* Accréditations badges */}
+            <ScrollReveal delay={0.48} className="hero__badges">
               {certifHighlights.map((c) => (
-                <span key={c.org} className="hero__badge" style={{ "--badge-color": c.color }}>
+                <span
+                  key={c.org}
+                  className={`hero__badge ${c.featured ? "hero__badge--featured" : ""}`}
+                  style={{ "--badge-color": c.color }}
+                >
                   <Award size={13} />
-                  {c.org}
+                  <span>{c.org}</span>
+                  {c.featured && <span className="hero__badge-tag">Référence</span>}
                 </span>
               ))}
             </ScrollReveal>
@@ -106,7 +133,7 @@ export default function Home() {
           <ScrollReveal delay={0.2} className="hero__photo-col">
             <motion.div
               className="hero__photo-wrapper"
-              initial={{ opacity: 0, scale: 0.93 }}
+              initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
@@ -118,27 +145,27 @@ export default function Home() {
                 width={320}
                 height={380}
               />
-              {/* Floating accent card */}
+              {/* Floating executive stat card */}
               <motion.div
                 className="hero__floating-card"
-                initial={{ opacity: 0, x: 24, y: 24 }}
+                initial={{ opacity: 0, x: 20, y: 20 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span className="hero__floating-value">09</span>
-                <span className="hero__floating-label">Projets ISE</span>
+                <span className="hero__floating-label">Études & Projets</span>
               </motion.div>
             </motion.div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ============ STATS ============ */}
+      {/* ============ STATS BAR ============ */}
       <section className="stats-section">
         <div className="container">
           <div className="stats__grid">
             {stats.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 0.1} className="stats__item">
+              <ScrollReveal key={s.label} delay={i * 0.08} className="stats__item">
                 <span className="stats__value" style={{ color: s.color }}>{s.value}</span>
                 <span className="stats__label">{s.label}</span>
               </ScrollReveal>
@@ -152,32 +179,32 @@ export default function Home() {
         <div className="container about__inner">
           <div className="about__text">
             <ScrollReveal>
+              <span className="eyebrow">Profil & Vision</span>
               <h2 className="section__title">
-                Un double profil : rigueur statistique & sens du produit
+                Un double profil : rigueur statistique & sens du produit livrable
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="section__lead">
-                Étudiant en 2ᵉ année ISE à l'ENSEA, je travaille aussi bien sur des
-                modèles économétriques que sur des applications web
-                complètes.Mon but en tant que futur statisticien économiste est que mes analyses soient des outils concrets
-                d'aide à la decision.Mon but en developpement logiciel est toujours de coder utile,robuste et de manière
-                adaptée aux objectifs.
+                Actuellement en cycle d'Ingénieur Statisticien Économiste à l'ENSEA, je mène aussi bien des
+                études économétriques poussées que le développement d'architectures applicatives complètes.
+                Mon but en tant que statisticien économiste est de produire des analyses claires, chiffrées
+                et immédiatement actionnables pour les décideurs économiques et financiers.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <Link to="/cv" className="btn btn-outline" style={{ marginTop: "var(--s4)", display: "inline-flex" }}>
-                Mon parcours complet <ArrowRight size={18} />
+                Consulter mon parcours détaillé <ArrowRight size={18} />
               </Link>
             </ScrollReveal>
           </div>
 
-          {/* About photo (smaller) */}
+          {/* About photo */}
           <ScrollReveal delay={0.12} className="about__photo-col">
             <div className="about__photo-wrapper">
               <img
                 src="/images/kouadio-full.jpg"
-                alt="Portrait de profil"
+                alt="Kouadio Poyard Samuel-Elie en immersion académique"
                 className="about__photo"
                 loading="lazy"
               />
@@ -190,7 +217,8 @@ export default function Home() {
       <section className="section featured-section">
         <div className="container">
           <ScrollReveal>
-            <h2 className="section__title">Projets en avant</h2>
+            <span className="eyebrow">Sélection de réalisations</span>
+            <h2 className="section__title">Travaux & Projets Clés</h2>
           </ScrollReveal>
           <div className="grid-3" style={{ marginTop: "var(--s5)" }}>
             {featured.map((p, i) => (
@@ -199,7 +227,7 @@ export default function Home() {
           </div>
           <ScrollReveal delay={0.15} className="section__cta">
             <Link to="/projets" className="btn btn-outline">
-              Voir les 9 projets <ArrowRight size={18} />
+              Explorer les 9 réalisations <ArrowRight size={18} />
             </Link>
           </ScrollReveal>
         </div>
@@ -209,11 +237,12 @@ export default function Home() {
       <section className="section skills-section">
         <div className="container">
           <ScrollReveal>
-            <h2 className="section__title">Compétences & outils</h2>
+            <span className="eyebrow">Expertise Technique</span>
+            <h2 className="section__title">Compétences & Environnements de Travail</h2>
           </ScrollReveal>
           <div className="skills" style={{ marginTop: "var(--s5)" }}>
             {skillGroups.map((g, i) => (
-              <ScrollReveal key={g.title} delay={i * 0.1} className="skills__group">
+              <ScrollReveal key={g.title} delay={i * 0.08} className="skills__group">
                 <div className="skills__group-header">
                   <g.icon size={20} className="skills__icon" />
                   <h3>{g.title}</h3>
@@ -233,26 +262,37 @@ export default function Home() {
       <section className="section certif-teaser">
         <div className="container">
           <ScrollReveal>
-            <h2 className="section__title">Simulations professionnelles</h2>
+            <span className="eyebrow">Accréditations & Références</span>
+            <h2 className="section__title">Certifications Internationales & Simulations</h2>
             <p className="section__lead">
-              Certifications obtenues via Forage: simulations de poste chez des firmes
-              de renommée mondiale.
+              Programmes de formation et simulations certifiantes validés auprès d'institutions internationales et de leaders sectoriels (FMI, BCG, Goldman Sachs).
             </p>
           </ScrollReveal>
           <div className="certif-teaser__grid" style={{ marginTop: "var(--s5)" }}>
             {certifHighlights.map((c, i) => (
-              <ScrollReveal key={c.org} delay={i * 0.12}>
-                <div className="certif-teaser__card" style={{ "--card-color": c.color }}>
-                  <Award size={28} className="certif-teaser__icon" />
+              <ScrollReveal key={c.org} delay={i * 0.08}>
+                <div
+                  className={`certif-teaser__card ${c.featured ? "certif-teaser__card--featured" : ""}`}
+                  style={{ "--card-color": c.color }}
+                >
+                  <div className="certif-teaser__card-top">
+                    <Award size={24} className="certif-teaser__icon" />
+                    {c.featured && (
+                      <span className="certif-teaser__pill">
+                        Référence
+                      </span>
+                    )}
+                  </div>
                   <p className="certif-teaser__org">{c.org}</p>
                   <p className="certif-teaser__title">{c.title}</p>
+                  {c.desc && <p className="certif-teaser__desc">{c.desc}</p>}
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <ScrollReveal delay={0.2} className="section__cta">
+          <ScrollReveal delay={0.18} className="section__cta">
             <Link to="/certifications" className="btn btn-outline">
-              Voir toutes les certifications <ArrowRight size={18} />
+              Consulter le détail des accréditations <ArrowRight size={18} />
             </Link>
           </ScrollReveal>
         </div>
@@ -260,4 +300,3 @@ export default function Home() {
     </>
   );
 }
-

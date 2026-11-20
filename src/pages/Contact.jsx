@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Copy, Check, Send, Sparkles, Clock, Globe } from "lucide-react";
+import { Mail, MapPin, Copy, Check, Send, Clock, Globe } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "../components/BrandIcons";
 import ScrollReveal from "../components/ScrollReveal";
 import "./Contact.css";
@@ -63,7 +63,7 @@ export default function Contact() {
         <ScrollReveal>
           <div className="contact-page__header">
 
-            <span className="laysimp">Contact & Collaboration</span>
+            <span className="eyebrow">Contact & Collaboration</span>
             <h1 className="section__title">Donnons vie à vos projets</h1>
             <p className="section__lead">
               Disponible pour des missions et opportunités en data science, modélisation
@@ -162,7 +162,7 @@ export default function Contact() {
           <ScrollReveal delay={0.15} className="contact-form-col">
             <div className="contact-form-wrapper">
               <div className="contact-form-header">
-                <Sparkles size={20} className="form-sparkle" />
+                <Send size={20} className="form-header-icon" />
                 <h2 className="form-title">Envoyer un message direct</h2>
                 <p className="form-desc">
                   Remplissez ce formulaire et je vous répondrai dans les plus brefs délais.
